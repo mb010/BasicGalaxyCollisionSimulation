@@ -1,0 +1,43 @@
+v09
+Supports individual speeds for each of the rings.
+Particles are equal in angle spacing along each ring. Equally distributed amongst each ring.
+
+v10
+Visualisation data is saved. (and loadable using ploy.py).
+Visualisation displays time now, not the number of steps (fluid motion)
+Corrected some errors in the math (I believe) See notes on 02/05
+Changed the way the step time is calculated.
+
+v11
+Radius and speed data output saved
+StartPositions now accepts transformations for 1 galaxy.
+
+v12
+All transformation variables enabled.
+Errors have been brought to my attention in this version. I intend to fix these in the following versions.
+
+v13
+Changed loop to be one while loop with a conditional if for (fortran) lines 100-200.
+This is after I used pure python in playground to learn that a condition I must employ is: eta<<deltat
+
+v14
+Changing output method to use memory views which whose values are set instead of np arrays since this is my biggest bottleneck? (This cant be true)
+
+v15
+Using GUI to do analysis - Switching between different graphs (echeck etc.) and sliding graph,
+with the ability to select which values one is considering and to output a graph of a specific time into a 3d graphic.
+
+v16
+Coloring of individual galaxies as seperate entities
+Slider plot with 3d plot instead of 2d slider plot in main body and in GalaxyGUI.py
+
+v17
+Removed multithreading.
+For the 16 threads, it takes so long to allocate the processes, that it LOSES a lot of time int that process, and therefore takes SIGNIFICANTLY LONGER (specifically on the ryzen system).
+
+v18
+
+
+vFinal
+Has multiple galaxy.py files for multiple calculations which are output differently. 
+Fixed pyx file which was allocating the masses of the central bodies in the reverse order, meaning the third galaxy was not the right mass.
